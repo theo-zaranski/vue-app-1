@@ -66,14 +66,8 @@
         this.getBreeds();
       },
       watch: {
-
         selected_breed: function () {
           console.log(this.selected_breed)
-
-          let country_code = this.selected_breed.country_code.toLowerCase();
-
-          this.country_flag_url = `https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/flags/1x1/${country_code}.svg`;
-          this.getImages();
         }
       },
       methods: {
@@ -86,7 +80,7 @@
             this.breeds = response.data;
             console.log("-- (" + this.breeds.length + ") Breeds from TheCatAPI.com")
 
-            // pick one to display initially
+            // Selection de la race au départ
             this.selected_breed = this.breeds[10]
           } catch (err) {
             console.log(err)
