@@ -66,8 +66,10 @@
         this.getBreeds();
       },
       watch: {
+
         selected_breed: function () {
           console.log(this.selected_breed)
+          this.getImages();
         }
       },
       methods: {
